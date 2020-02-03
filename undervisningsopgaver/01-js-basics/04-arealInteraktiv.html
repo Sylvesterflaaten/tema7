@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undervisningsopgaver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <p>Længde</p>
+    <input type="text" id="laengde">
+    <p>Bredde</p>
+    <input type="text" id="bredde">
+
+    <button class="resultat">Resultat</button>
+
+    <script>
+        document.querySelector(".resultat").addEventListener("click", resultatKnap);
+
+        function resultatKnap() {
+
+            let længde = document.querySelector("#laengde").value;
+            let bredde = document.querySelector("#bredde").value;
+
+            let areal = længde * bredde;
+
+            console.log(`Arealet er ${areal}`);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undervisningsopgaver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <input type="text" id="name">
+    <button class="videre">Videre</button>
+
+    <script>
+        document.querySelector(".videre").addEventListener("click", videreKnap);
+
+        function videreKnap() {
+
+            let name = document.querySelector("#name").value
+            console.log(`Hej ${name}`);
+        }
+
+    </script>
+
+</body>
+
+</html>
