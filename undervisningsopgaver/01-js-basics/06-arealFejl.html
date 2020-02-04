@@ -24,10 +24,17 @@
 
             let længde = document.querySelector("#laengde").value;
             let bredde = document.querySelector("#bredde").value;
-
+            let resultat;
             let areal = længde * bredde;
+            /*
+                        console.log(`Arealet er ${areal}`);*/
 
-            console.log(`Arealet er ${areal}`);
+            if (isNaN(længde) == true || (isNaN)(bredde) == true) {
+                resultat = "Ugyldig"
+            } else {
+                resultat = længde * bredde;
+            }
+            console.log(resultat)
 
         }
 
