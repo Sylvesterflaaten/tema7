@@ -38,16 +38,22 @@
         function start() {
             console.log("start")
 
+
             cirkel.innerHTML = "<img src='http://mabe-kea.dk/E19/pics/pig.png'>";
             firkant.innerHTML = "<img src='http://mabe-kea.dk/E19/pics/frog.png'>";
 
             firkant.addEventListener("click", skiftBillede);
+            cirkel.addEventListener("click", stopSkift);
 
             function skiftBillede() {
-                cirkel.innerHTML = "<img src='http://mabe-kea.dk/E19/pics/frog.png'>";
-                firkant.innerHTML = "<img src='http://mabe-kea.dk/E19/pics/pig.png'>";
+                let firkantStart = firkant.innerHTML;
+                firkant.innerHTML = cirkel.innerHTML;
+                cirkel.innerHTML = firkantStart;
             }
 
+            function stopSkift() {
+                firkant.removeEventListener("click", skiftBillede);
+            }
         }
 
     </script>
