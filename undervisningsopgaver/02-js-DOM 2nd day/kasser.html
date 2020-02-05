@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        div {
+            background: blue;
+            height: 100px;
+            width: 100px;
+            margin: 1em;
+            display: inline-block;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .green {
+            background: green;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="red"></div>
+    <div class="red"></div>
+    <div class="red"></div>
+    <div></div>
+    <div class="red"></div>
+    <div class="red"></div>
+    <div class="red"></div>
+    <div class="red"></div>
+    <div class="red"></div>
+
+    <script>
+        const rødekasset = document.querySelectorAll(".red");
+        console.log(rødekasset);
+        rødekasset.forEach(kasse => {
+            kasse.addEventListener("click", blivBlå);
+            kasse.style.cursor = "pointer";
+        })
+
+
+        function blivBlå() {
+            console.log(this)
+            this.classList.toggle("green");
+        }
+
+    </script>
+
+</body>
+
+</html>
