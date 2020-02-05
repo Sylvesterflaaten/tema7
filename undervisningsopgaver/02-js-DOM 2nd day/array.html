@@ -3,16 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fuckthis</title>
+
+    <style>
+        body {
+            color: whitesmoke;
+        }
+
+        #display {
+            width: 20vw;
+            height: 20vw;
+            border: 1px solid silver;
+            margin: 7vw;
+            padding: 1vw;
+        }
+
+    </style>
 </head>
 
 <body>
-    <script>
-        const undervisere = ["Kamilla", "Martin", "Klaus", "Allan", "Lau", "Mikkel"];
-        /*
-                console.log(undervisere)*/
+    <div id="display"></div>
 
-        undervisere.forEach(lærer, index => console.log(lærer, index));
+
+
+    <script>
+        let playlist = ["I tried", "See You Again", "Candy Paint", "Bohemian Rhapsody", "Changes", "I'll Be Missing You", "Lose Yourself", "Mockingbird", "The Search", "In The End"];
+        playlist.forEach(sang => {
+            document.querySelector("#display").innerHTML += `${sang} <br>`;
+            console.log(sang);
+        })
 
     </script>
 </body>
