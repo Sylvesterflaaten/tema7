@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <article class="dyret">
+
+        <p></p>
+        <img src="" alt="">
+    </article>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("start")
+            let dyr = [{
+                    "navn": "Frø",
+                    "type": "Amfible",
+                    "billede": "http://mabe-kea.dk/E19/pics/frog.png",
+                    "levested": "skovbunden"
+                },
+                {
+                    "navn": "Gris",
+                    "type": "Pattedyr",
+                    "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+                    "levested": "svinefarmen"
+                },
+                {
+                    "navn": "Ræv",
+                    "type": "Pattedyr",
+                    "billede": "http://mabe-kea.dk/E19/pics/fox.png",
+                    "levested": "skoven"
+                }, {
+                    "navn": "Sild",
+                    "type": "Fisk",
+                    "billede": "http://mabe-kea.dk/E19/pics/sild.jpg",
+                    "levested": "havet"
+                }, {
+                    "navn": "Krokodille",
+                    "type": "Krybdyr",
+                    "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg",
+                    "levested": "sumpen"
+                }
+            ]
+            const dyret = document.querySelector(".dyret");
+
+
+            dyr.forEach(dyr => {
+                dyret.innerHTML += `<p>${dyr.navn}, ${dyr.type} fra ${dyr.levested}`
+
+            })
+
+
+
+            /*        let dyr = '${dyr.navn}'*/
+            console.log(dyr);
+
+        }
+    </script>
+
+</body></html>
