@@ -14,23 +14,31 @@
         #display {
             width: 20vw;
             height: 20vw;
-            border: 1px solid silver;
+            border: 1px solid black;
             margin: 7vw;
             padding: 1vw;
+            color: black;
         }
 
     </style>
 </head>
 
 <body>
+    <ul id="display"></ul>
+    <!--
     <div id="display"></div>
-
+-->
 
 
     <script>
         let playlist = ["I tried", "See You Again", "Candy Paint", "Bohemian Rhapsody", "Changes", "I'll Be Missing You", "Lose Yourself", "Mockingbird", "The Search", "In The End"];
         playlist.forEach(sang => {
-            document.querySelector("#display").innerHTML += `${sang} <br>`;
+            /*            document.querySelector("#display").innerHTML += `${sang} <br>`;*/
+            let element = document.createElement("ul");
+            let mySong = document.createTextNode(sang);
+
+            element.appendChild(mySong);
+            document.querySelector("#display").appendChild(element);
             console.log(sang);
         })
 
