@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+
+        article {
+            border: 1px solid black;
+            padding: 1rem;
+        }
+
+        /*        .roskilde {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(300px, auto);
+        }*/
+
+        .data-container {
+            display: grid;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <main>
+        <div class="wrapper">
+            <div class="image"></div>
+            <div class="header"></div>
+            <div class="broedtekst"></div>
+            <div class="date"></div>
+        </div>
+        <section class="data-container"></section>
+        <template>
+            <article class="roskilde">
+                <img src="" alt="">
+                <h3></h3>
+                <p class="brødtekst"></p>
+                <p class="dato"></p>
+            </article>
+        </template>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("start")
+            let roskildeTekst = [{
+                    "overskrift": "Kampen fortsætter",
+                    "brødtekst": "Kampen mod kæmpe-bjørneklo startede i 2010 med den første indsatsplan for bekæmpelse af kæmpe-bjørneklo. Siden da er mange bestande blevet udryddet eller formindsket kraftigt, men der er også fundet mange nye. Så planten findes stadig i kommunen.",
+                    "billede": "https://dit-roskilde.dk/wp-content/uploads/2020/01/Kpebjorneklo-200x150.jpg",
+                    "dato": "2. februar 2020"
+                },
+                {
+                    "overskrift": "Er din hud tør og trist?",
+                    "brødtekst": "NY behandling fra Phytomer – HYDRA ORIGINAL Plumping Moisturing Facial med ØKOLOGISKE alger – Så er din hud tør og trist, så kan du booke din tid hos Klinik Rosenvold. Så er du godt i gang med denne innovative ansigtsbehandling!",
+                    "billede": "https://dit-roskilde.dk/wp-content/uploads/2020/02/IMG_E6818-200x150.jpg",
+                    "dato": "2. februar 2020"
+                },
+                {
+                    "overskrift": "I dag er en ganske særlig dag",
+                    "brødtekst": "”Som talnørd kan jeg næsten ikke vente,” skriver vores læser Dorthe Falck, der her beskriver, hvorfor første søndag i februar er en ganske særlig dag.",
+                    "billede": "https://dit-roskilde.dk/wp-content/uploads/2020/02/02022020-foto-dorthe-falck-200x150.png",
+                    "dato": "2. februar 2020"
+                }, {
+                    "overskrift": "Ældre skal lære udlændinge dansk",
+                    "brødtekst": "Ældre, som har ressourcerne, men ikke er så mobile, får nu mulighed for at hjælpe andre gennem frivilligt arbejde. De kan hver uge få besøg af en udlænding, som kommer for at øve sig i hverdagsdansk. Den socialøkonomiske virksomhed,",
+                    "billede": "https://dit-roskilde.dk/wp-content/uploads/2020/01/custom1-2-200x150.jpg",
+                    "dato": "2. februar 2020"
+                }, {
+                    "overskrift": "Byttemarked",
+                    "brødtekst": "GIV HVAD DU HAR – TAG HVAD DU KAN BRUGE. Sådan foregår det på Byttemarkedet den 16 februar 2020, når Søndag på Kildegården og Kildegården Roskilde danner rammerne for et godt tiltag.",
+                    "billede": "https://dit-roskilde.dk/wp-content/uploads/2020/01/82752710_150594223060664_7698577008036413440_n-200x150.jpg",
+                    "dato": "1. februar 2020"
+                }
+            ]
+            const container = document.querySelector(".data-container");
+            const roskildeTemplate = document.querySelector("template");
+            roskildeTekst.forEach(grid => {
+
+                let klon = roskildeTemplate.cloneNode(true).content;
+                klon.querySelector("h3").textContent = grid.overskrift;
+                klon.querySelector("img").src = grid.billede;
+                klon.querySelector(".brødtekst").textContent += grid.brødtekst;
+                klon.querySelector(".dato").textContent += grid.dato;
+                container.appendChild(klon);
+
+
+            })
+            console.log(roskildeTekst);
+
+        }
+    </script>
+
+</body></html>
